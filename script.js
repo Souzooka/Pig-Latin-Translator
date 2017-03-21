@@ -20,11 +20,14 @@ function PigLatinTranslator(str) {
     console.log(hyphenIndex);
 
     if (str.slice(hyphenIndex + 1) === "ay") {
-      console.log("test")
 
     } else {
       var firstChar = str[hyphenIndex + 1];
+      var word = str.substr(0, hyphenIndex);
+      str = firstChar + word;
     }
+
+    return str;
 
   }
 
@@ -36,4 +39,4 @@ function PigLatinTranslator(str) {
 }
 
 
-console.log(PigLatinTranslator().fromPigLatin("eat-ay"));
+console.log(PigLatinTranslator().fromPigLatin("ello-hay"));
