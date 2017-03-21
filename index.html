@@ -20,6 +20,14 @@
 
       });
 
+      document.getElementById("inputFromPigSubmit").addEventListener("click", function() {
+        var input = document.getElementById("inputFromPig").value;
+        var output = translator.fromPigLatin(input);
+        document.getElementById("inputFromPig").value = "";
+        document.getElementById("fromPigLatinOutput").innerHTML = output;
+
+      });
+
 
     };
   </script>
@@ -47,8 +55,8 @@
 <button id="inputFromPigSubmit">Submit</button>
 
 
-<p>Output:<p><br>
-<p></p>
+<p>Output:<p>
+<p id="fromPigLatinOutput"></p>
 
 </body>
 </html>
