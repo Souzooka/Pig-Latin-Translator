@@ -1,24 +1,31 @@
 'use strict';
 
 
-function toPigLatin(str) {
+function PigLatinTranslator(str) {
 
-  if (str.search(/[aeiou]/gi) === 0) {
-    str = str + "-ay";
-  } else {
-    var firstChar = str.substr(0, 1);
-    str = str.slice(1);
-    str = str + "-" + firstChar + "ay";
+  function toPigLatin(str) {
+    if (str.search(/[aeiou]/gi) === 0) {
+      str = str + "-ay";
+    } else {
+      var firstChar = str.substr(0, 1);
+      str = str.slice(1);
+      str = str + "-" + firstChar + "ay";
+    }
+
+    return str;
   }
 
-  return str;
+  function fromPigLatin(str) {
+
+  }
+
+  return {
+    toPigLatin,
+    fromPigLatin
+  }
 
 }
 
-function fromPigLatin(str) {
 
-}
-
-
-console.log(toPigLatin("eat"));
-console.log(toPigLatin("hello"));
+console.log(PigLatinTranslator().toPigLatin("eat"));
+console.log(PigLatinTranslator().toPigLatin("hello"));
