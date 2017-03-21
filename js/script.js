@@ -18,8 +18,18 @@ function pigLatinTranslator() {
   function fromPigLatin(str) {
     var hyphenIndex = str.search(/-/);
 
-    if (str.match(/-/) < 1) {
+    if (str.match(/-/g).length < 1) {
       throw new Error("Not a valid Pig-Latin string");
+    }
+
+    if (str.match(/-/g).length > 1) {
+      var matches = str.match(/-/g).length;
+      var tentativeIndex = 0;
+
+      for (var i = 0; i < matches; i++) {
+        tentativeIndex = str.indexOf("-", tentativeIndex+1);
+      }
+      hyphenIndex = tentativeIndex;
     }
 
     if (str.slice(hyphenIndex + 1) === "ay") {
