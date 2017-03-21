@@ -9,12 +9,13 @@ function pigLatinTranslator() {
       throw new Error("Cannot start string with a hyphen.");
     }
 
-    if (str.search(/[aeiou]/gi) === 0) {
+    if (str.search(/[AEIOU]/gi) === 0) {
       str = str + "-ay";
     } else {
-      var firstChar = str.substr(0, 1);
-      str = str.slice(1);
-      str = str + "-" + firstChar + "ay";
+      var firstVowelIndex = str.search(/[AEIOU]/i);
+      var firstHalf = str.slice(0, firstVowelIndex);
+      var secondHalf = str.slice(firstVowelIndex);
+      str = secondHalf + "-" + firstHalf + "ay";
     }
 
     return str;
