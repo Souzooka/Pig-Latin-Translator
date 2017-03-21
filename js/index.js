@@ -6,9 +6,10 @@ window.onload = function() {
 
   document.getElementById("inputToPigSubmit").addEventListener("click", function() {
     var input = document.getElementById("inputToPig").value;
+    var output;
 
     try {
-      var output = translator.toPigLatin(input);
+      output = translator.toPigLatin(input);
     }
     catch (error) {
       alert("Cannot start a string with a hyphen.");
@@ -21,9 +22,10 @@ window.onload = function() {
 
   document.getElementById("inputFromPigSubmit").addEventListener("click", function() {
     var input = document.getElementById("inputFromPig").value;
+    var output;
 
     try {
-      var output = translator.fromPigLatin(input);
+      output = translator.fromPigLatin(input);
     }
     catch (error) {
       alert("Not a valid pig-latin string.");
