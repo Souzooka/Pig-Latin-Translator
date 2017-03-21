@@ -4,6 +4,11 @@
 function pigLatinTranslator() {
 
   function toPigLatin(str) {
+
+    if (str.search(/-/) === 0) {
+      throw new Error("Cannot start string with a hyphen.");
+    }
+
     if (str.search(/[aeiou]/gi) === 0) {
       str = str + "-ay";
     } else {

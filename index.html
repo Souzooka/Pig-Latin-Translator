@@ -14,7 +14,14 @@
 
       document.getElementById("inputToPigSubmit").addEventListener("click", function() {
         var input = document.getElementById("inputToPig").value;
-        var output = translator.toPigLatin(input);
+        try {
+          var output = translator.toPigLatin(input);
+        }
+        catch (error) {
+          alert("Cannot start a string with a hyphen.");
+          return null;
+        }
+
         document.getElementById("toPigLatinOutput").innerHTML = output;
 
       });
@@ -29,7 +36,6 @@
           alert("Not a valid pig-latin string.");
           return null;
         }
-
 
         document.getElementById("fromPigLatinOutput").innerHTML = output;
 
