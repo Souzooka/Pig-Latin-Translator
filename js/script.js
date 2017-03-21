@@ -4,6 +4,7 @@
 function pigLatinTranslator() {
 
   function toPigPhrase(str) {
+    str = str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
 
     if (str === "" || typeof str !== "string") {
       throw new Error("Please enter a valid string.");
@@ -29,6 +30,7 @@ function pigLatinTranslator() {
   }
 
   function toPigLatin(str) {
+    str = str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
 
     if (str.search(/-/) === 0) {
       throw new Error("Cannot start string with a hyphen.");
