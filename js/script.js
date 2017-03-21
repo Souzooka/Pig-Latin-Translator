@@ -4,10 +4,13 @@
 function pigLatinTranslator() {
 
   function toPigPhrase(str) {
-    str = str.split(" ");
-    console.log(str);
-    var strArr = [];
 
+    if (str === "" || typeof str !== "string") {
+      throw new Error("Please enter a valid string.");
+    }
+
+    str = str.split(" ");
+    var strArr = [];
 
     for (let i = 0; i < str.length; i++) {
       strArr.push(toPigLatin(str[i]));
