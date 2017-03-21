@@ -1,7 +1,7 @@
 'use strict';
 
 
-function PigLatinTranslator(str) {
+function PigLatinTranslator() {
 
   function toPigLatin(str) {
     if (str.search(/[aeiou]/gi) === 0) {
