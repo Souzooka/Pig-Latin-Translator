@@ -41,9 +41,10 @@ function pigLatinTranslator() {
     if (str.slice(hyphenIndex + 1) === "ay") {
       str = str.substr(0, hyphenIndex);
     } else {
-      var firstChar = str[hyphenIndex + 1];
-      var word = str.substr(0, hyphenIndex);
-      str = firstChar + word;
+      var ayIndex = str.indexOf("ay", hyphenIndex);
+      var firstHalf = str.slice(hyphenIndex+1, ayIndex);
+      var secondHalf = str.slice(0, hyphenIndex);
+      str = firstHalf + secondHalf;
     }
 
     return str;
