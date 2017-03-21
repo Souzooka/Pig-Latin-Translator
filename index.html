@@ -4,8 +4,25 @@
   <meta charset="UTF-8">
   <title>Pig Latin Translator</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <script src="script.js"></script>
-  <script></script>
+  <script src="js/script.js"></script>
+  <script>
+    window.onload = function() {
+
+      var translator = pigLatinTranslator();
+      var fromPigLatinInput = "";
+
+
+      document.getElementById("inputToPigSubmit").addEventListener("click", function() {
+        var input = document.getElementById("inputToPig").value;
+        var output = translator.toPigLatin(input);
+        document.getElementById("inputToPig").value = "";
+        document.getElementById("toPigLatinOutput").innerHTML = output;
+
+      });
+
+
+    };
+  </script>
 </head>
 <body>
 
@@ -13,12 +30,12 @@
 
 
 <span>Input:</span><br>
-<input type="text" name="inputToPig">
+<input type="text" id="inputToPig">
 <button id="inputToPigSubmit">Submit</button>
 
 
-<p>Output:<p><br>
-<p></p>
+<p>Output:<p>
+<p id="toPigLatinOutput"></p>
 
 <hr>
 
@@ -26,7 +43,7 @@
 
 
 <span>Input:</span><br>
-<input type="text" name="inputFromPig">
+<input type="text" id="inputFromPig">
 <button id="inputFromPigSubmit">Submit</button>
 
 
