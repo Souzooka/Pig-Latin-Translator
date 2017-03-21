@@ -3,11 +3,15 @@
 
 function toPigLatin(str) {
 
-  if (str.search(/[aeiou]/gi) === 0 ) {
-    console.log("test");
+  if (str.search(/[aeiou]/gi) === 0) {
+    str = str + "-ay";
+  } else {
+    var firstChar = str.substr(0, 1);
+    str = str.slice(1);
+    str = str + "-" + firstChar + "ay";
   }
 
-
+  return str;
 
 }
 
@@ -15,5 +19,6 @@ function fromPigLatin(str) {
 
 }
 
-toPigLatin("eat");
-toPigLatin("hello");
+
+console.log(toPigLatin("eat"));
+console.log(toPigLatin("hello"));
