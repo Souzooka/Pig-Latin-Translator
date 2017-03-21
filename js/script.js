@@ -3,6 +3,28 @@
 
 function pigLatinTranslator() {
 
+  function toPigPhrase(str) {
+    str = str.split(" ");
+    console.log(str);
+    var strArr = [];
+
+
+    for (let i = 0; i < str.length; i++) {
+      strArr.push(toPigLatin(str[i]));
+    }
+    return strArr.join(" ");
+  }
+
+  function fromPigPhrase(str) {
+    str = str.split(" ");
+    var strArr = [];
+
+    for (let i = 0; i < str.length; i++) {
+      strArr.push(fromPigLatin(str[i]));
+    }
+    return strArr.join(" ");
+  }
+
   function toPigLatin(str) {
 
     if (str.search(/-/) === 0) {
@@ -52,6 +74,8 @@ function pigLatinTranslator() {
 
   return {
     toPigLatin,
-    fromPigLatin
+    fromPigLatin,
+    toPigPhrase,
+    fromPigPhrase
   };
 }

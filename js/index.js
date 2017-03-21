@@ -7,7 +7,8 @@ window.onload = function() {
     var output;
 
     try {
-      output = translator.toPigLatin(input);
+      console.log("what")
+      output = translator.toPigPhrase(input);
     }
     catch (error) {
       alert("Cannot start a string with a hyphen.");
@@ -23,7 +24,7 @@ window.onload = function() {
     var output;
 
     try {
-      output = translator.fromPigLatin(input);
+      output = translator.fromPigPhrase(input);
     }
     catch (error) {
       alert("Not a valid pig-latin string.");
