@@ -15,15 +15,22 @@
       document.getElementById("inputToPigSubmit").addEventListener("click", function() {
         var input = document.getElementById("inputToPig").value;
         var output = translator.toPigLatin(input);
-        document.getElementById("inputToPig").value = "";
         document.getElementById("toPigLatinOutput").innerHTML = output;
 
       });
 
       document.getElementById("inputFromPigSubmit").addEventListener("click", function() {
         var input = document.getElementById("inputFromPig").value;
-        var output = translator.fromPigLatin(input);
-        document.getElementById("inputFromPig").value = "";
+
+        try {
+          var output = translator.fromPigLatin(input);
+        }
+        catch (error) {
+          alert("Not a valid pig-latin string.");
+          return null;
+        }
+
+
         document.getElementById("fromPigLatinOutput").innerHTML = output;
 
       });
