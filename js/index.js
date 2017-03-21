@@ -1,8 +1,6 @@
 window.onload = function() {
 
   var translator = pigLatinTranslator();
-  var fromPigLatinInput = "";
-
 
   document.getElementById("inputToPigSubmit").addEventListener("click", function() {
     var input = document.getElementById("inputToPig").value;
